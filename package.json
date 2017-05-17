@@ -1,0 +1,32 @@
+{
+  "name": "go-ahead",
+  "version": "1.0.0",
+  "description": "Frontend form validation",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --config webpack.config.js",
+    "watch": "./node_modules/.bin/webpack --config webpack.config.js --progress --hot",
+    "test": "./node_modules/.bin/mocha --require babel-polyfill --compilers js:babel-register --reporter=nyan",
+    "test-watch": "./node_modules/.bin/mocha --require babel-polyfill --compilers js:babel-register --reporter=nyan --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitch-rickman/go-ahead.git"
+  },
+  "keywords": [
+    "Form",
+    "Validation"
+  ],
+  "author": "Mitch Rickman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitch-rickman/go-ahead/issues"
+  },
+  "homepage": "https://github.com/mitch-rickman/go-ahead#readme",
+  "devDependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "mocha": "^3.4.1",
+    "webpack": "^2.5.1"
+  }
+}
