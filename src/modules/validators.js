@@ -2,17 +2,16 @@
 import moment from 'moment';
 
 const validators = {
-  // expects date in YYYY-MM-DD
   age( value, min = 18 ) {
-    let isValid = true;
-    let minimum = moment().subtract(min.toString(), 'years');
     let age = moment(value);
+    let valid = age.isValid();
 
-    if ( minimum.isAfter(age) ) {
-      isValid = false;
+    if ( valid ) {
+      let minimum = moment().subtract(min.toString(), 'years');
+      valid = minimum.isAfter(age);
     }
 
-    return isValid;
+    return valid;
   },
 
 
