@@ -17,6 +17,20 @@ describe('Validators', function() {
       assert.equal(true, validators.age(moment().subtract('45', 'years'), 44));
       assert.equal(false, validators.age(moment().subtract('45', 'years'), 46));
     });
+  });
 
+  describe('number', function() {
+    it('should return false if value is not a number', function() {
+      assert.equal(false, validators.number(function() {}));
+      assert.equal(false, validators.number(''));
+      assert.equal(false, validators.number({}));
+    });
+
+    it('should return true if value is a number', function() {
+      assert.equal(true, validators.number(2));
+      assert.equal(true, validators.number(1.294));
+      assert.equal(true, validators.number(-1.294));
+      assert.equal(true, validators.number(0));
+    })
   });
 });
